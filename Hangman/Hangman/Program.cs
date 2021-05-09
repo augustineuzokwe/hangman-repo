@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Hangman
 {
@@ -6,11 +7,24 @@ namespace Hangman
     {
         public static void Main(string[] args)
         {
-            string [] words = { "Street", "Store", "Shop", "Buying"};
+            Random randomWord = new Random();
+            Random randomNumber = new Random(7);
 
-            foreach(var item in words)
-                Console.WriteLine(item);
+            string [] words = { "Street", "Storing", "Shoping", "Buying"};
+
+            string wordsToBeDisplayed = words[randomWord.Next(0, words.Length)];
+            ReplaceWordLetters replaceWordLetters = new ReplaceWordLetters();
+
+            Console.Write(replaceWordLetters.ReplaceRandomLetters(wordsToBeDisplayed));
 
         }
     }
 }
+
+
+/*
+- create randonm string for the game                                                             -> Done
+- make it possible to print different word each time the program is run (online how to ranomize) -> Done
+- for any choosen word, replace some letters with                                                -> Done
+- allow user to input missing letter and show it back to user
+ */
