@@ -8,11 +8,10 @@ namespace Hangman
         public static void Main(string[] args)
         {
             Random randomWord = new Random();
-            Random randomNumber = new Random(7);
 
             string [] words = { "Street", "Storing", "Shoping", "Buying"};
 
-            string wordsToBeDisplayed = words[randomWord.Next(0, words.Length)];
+            string wordsToBeDisplayed = words[randomWord.Next(words.Length)];
             ReplaceWordLetters replaceWordLetters = new ReplaceWordLetters();
 
             Console.Write(replaceWordLetters.ReplaceRandomLetters(wordsToBeDisplayed));
