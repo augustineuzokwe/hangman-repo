@@ -6,7 +6,11 @@ namespace Hangman
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("test commit and push");
+            string [] words = { "Street", "Store", "Shop", "Buying"};
+
+            foreach(var item in words)
+                Console.WriteLine(item);
+
         }
     }
 }
