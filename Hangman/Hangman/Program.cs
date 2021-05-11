@@ -7,23 +7,55 @@ namespace Hangman
     {
         public static void Main(string[] args)
         {
-            Random randomWord = new Random();
 
-            string [] words = { "Street", "Storing", "Shoping", "Buying"};
+            RandomWord randomWord = new RandomWord();
+            String selectedWord = randomWord.getRandomWord();
+            String scrambledWord = ScrambleWord.getScrambledWord(selectedWord);
+            char[] gameWord = scrambledWord.ToCharArray();
 
-            string wordsToBeDisplayed = words[randomWord.Next(words.Length)];
-            ReplaceWordLetters replaceWordLetters = new ReplaceWordLetters();
+            Console.WriteLine("Here is the word for Hangman game, please fill in each letter");
+            Console.WriteLine(scrambledWord);
 
-            Console.Write(replaceWordLetters.ReplaceRandomLetters(wordsToBeDisplayed));
+            int count = 0;
+            string completedWord = "";
+            int wrongInputCount = 0;
+            do
+            {
+                count++;
 
+                Console.WriteLine("");
+                Console.WriteLine("Enter a letter... ");
+                char playerInput = char.Parse(Console.ReadLine());
+
+                if (CheckPlayerInput.doesPlayerInputExist(selectedWord, playerInput))
+                {
+                    for (int y = 0; y < selectedWord.Length; y++)
+                    {
+                        if (selectedWord[y] == playerInput)
+                        {
+                            gameWord[y] = playerInput;
+                            completedWord = new string(gameWord);
+                            Console.WriteLine("You hit a node!: {0} ", completedWord);
+                        }
+
+                        if (completedWord.Equals(selectedWord))
+                            Console.Write("YOU'VE WON THE GAME");
+                    }
+                }
+                else
+                {
+                    wrongInputCount++;
+
+                    Console.WriteLine("you have entered a wrong letter: [ {0} ] you have Few more chance....", playerInput);
+
+                    if (wrongInputCount == 5)
+                    {
+                        Console.WriteLine("YOU LOST THE GAME");
+                        break;
+                    }
+                }
+            }
+            while (count <= selectedWord.Length);
         }
     }
 }
-
-
-/*
-- create randonm string for the game                                                             -> Done
-- make it possible to print different word each time the program is run (online how to ranomize) -> Done
-- for any choosen word, replace some letters with                                                -> Done
-- allow user to input missing letter and show it back to user
- */
