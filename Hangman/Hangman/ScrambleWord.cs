@@ -1,16 +1,12 @@
 ﻿using System;
 namespace Hangman
 {
-    public class ReplaceWordLetters
+    public class ScrambleWord
     {
 
-        private Random randomNumber = new Random(7);
+        private static Random randomNumber = new Random(7);
 
-        public ReplaceWordLetters()
-        {
-        }
-
-        public String ReplaceRandomLetters(string word)
+        public static String getScrambledWord(string word)
         {
             return word
                     .Replace(word[randomNumber.Next(0, word.Length)], '_')
