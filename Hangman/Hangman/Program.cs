@@ -37,9 +37,12 @@ namespace Hangman
                             completedWord = new string(gameWord);
                             Console.WriteLine("You hit a node!: {0} ", completedWord);
                         }
+                    }
 
-                        if (completedWord.Equals(selectedWord))
-                            Console.Write("YOU'VE WON THE GAME");
+                    if (completedWord.Equals(selectedWord))
+                    {
+                        Console.Write("YOU'VE WON THE GAME");
+                        break;
                     }
                 }
                 else
@@ -48,7 +51,7 @@ namespace Hangman
 
                     Console.WriteLine("you have entered a wrong letter: [ {0} ] you have Few more chance....", playerInput);
 
-                    if (wrongInputCount == 5)
+                    if (wrongInputCount == 2)
                     {
                         Console.WriteLine("YOU LOST THE GAME");
                         break;
