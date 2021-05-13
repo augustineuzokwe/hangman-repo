@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+
+
 namespace Hangman
 {
     public class RandomWord
@@ -6,31 +9,10 @@ namespace Hangman
         public string getRandomWord()
         {
             Random randomNumber = new Random();
+            List<string> wordList = new List<string> { "street", "storing", "shopping", "buying", "skating" };
+            int number = randomNumber.Next(1, wordList.Count);
 
-            int number = randomNumber.Next(1, Data.words.Length);
-
-            string randomWord = "";
-
-            switch (number)
-            {
-                case 1:
-                    randomWord = Data.words[number];
-                    break;
-
-                case 2:
-                    randomWord = Data.words[number];
-                    break;
-
-                case 3:
-                    randomWord = Data.words[number];
-                    break;
-
-                case 4:
-                    randomWord = Data.words[number];
-                    break;
-            }
-
-            return randomWord;
+            return wordList[number];
         }
     }
 }

@@ -352,9 +352,6 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
-# BeatPulse healthcheck temp database
-healthchecksdb
-
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
@@ -381,7 +378,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+*.exe
 
-# JetBrains Rider
 .idea/
 *.sln.iml
+.DS_Store
+bin/
+obj/
