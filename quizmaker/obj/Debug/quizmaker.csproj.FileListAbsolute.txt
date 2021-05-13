@@ -1,6 +1,0 @@
-/Users/augustine.uzokwe/Documents/GitHub/mini_programs/quizmaker/bin/Debug/quizmaker.exe
-/Users/augustine.uzokwe/Documents/GitHub/mini_programs/quizmaker/bin/Debug/quizmaker.pdb
-/Users/augustine.uzokwe/Documents/GitHub/mini_programs/quizmaker/obj/Debug/quizmaker.csprojAssemblyReference.cache
-/Users/augustine.uzokwe/Documents/GitHub/mini_programs/quizmaker/obj/Debug/quizmaker.csproj.CoreCompileInputs.cache
-/Users/augustine.uzokwe/Documents/GitHub/mini_programs/quizmaker/obj/Debug/quizmaker.exe
-/Users/augustine.uzokwe/Documents/GitHub/mini_programs/quizmaker/obj/Debug/quizmaker.pdb
