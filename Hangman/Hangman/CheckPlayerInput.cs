@@ -3,7 +3,7 @@ namespace Hangman
 {
     public class CheckPlayerInput
     {
-        public static Boolean doesPlayerInputExist(string selectedWord, char playerInput)
+        internal static Boolean IsCharacterInString(string selectedWord, char playerInput)
         {
             if (selectedWord.Contains(playerInput.ToString()))
                 {

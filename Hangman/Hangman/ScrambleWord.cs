@@ -6,12 +6,12 @@ namespace Hangman
 
         private static Random randomNumber = new Random(7);
 
-        public static String getScrambledWord(string word)
+        public static string getScrambledWord(string selectedWord)
         {
-            return word
-                    .Replace(word[randomNumber.Next(0, word.Length)], '_')
-                    .Replace(word[randomNumber.Next(0, word.Length)], '_')
-                    .Replace(word[randomNumber.Next(0, word.Length)], '_');
+            return selectedWord
+                    .Replace(selectedWord[randomNumber.Next(0, selectedWord.Length)], '_')
+                    .Replace(selectedWord[randomNumber.Next(0, selectedWord.Length)], '_')
+                    .Replace(selectedWord[randomNumber.Next(0, selectedWord.Length)], '_');
         }
     }
 }

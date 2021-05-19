@@ -35,7 +35,10 @@
     <Compile Include="ScrambleWord.cs" />
     <Compile Include="RandomWord.cs" />
     <Compile Include="CheckPlayerInput.cs" />
-    <Compile Include="GamePlay.cs" />
+    <Compile Include="GameRound.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="GameRoundMessage.cs" />
+    <Compile Include="GameResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

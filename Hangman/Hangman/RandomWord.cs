@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace Hangman
 {
-    public class RandomWord
+    public static class RandomWord
     {
-        public string getRandomWord()
+        public static string getRandomWord()
         {
             Random randomNumber = new Random();
-            List<string> wordList = new List<string> { "street", "storing", "shopping", "buying", "skating" };
-            int number = randomNumber.Next(1, wordList.Count);
+            string[] wordList = Data.words;
+            int number = randomNumber.Next(1, wordList.Length);
 
             return wordList[number];
         }

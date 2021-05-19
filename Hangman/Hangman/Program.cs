@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Hangman
 {
@@ -8,15 +7,21 @@ namespace Hangman
         public static void Main(string[] args)
         {
 
-            RandomWord randomWord = new RandomWord();
-            String selectedWord = randomWord.getRandomWord();
-            String scrambledWord = ScrambleWord.getScrambledWord(selectedWord);
+            string word = RandomWord.getRandomWord();
+            string scrambledWord = ScrambleWord.getScrambledWord(word);
             char[] gameWord = scrambledWord.ToCharArray();
 
-            Console.WriteLine("Here is the word for Hangman game, please fill in each letter");
-            Console.WriteLine(scrambledWord);
+            GameRoundMessage.WelcomeToHangmanGame(scrambledWord);
+            int count = 0;
 
-            GamePlay.play(selectedWord, gameWord);
+            while (count < 3)
+            {
+                    char playerInput = GameRound.GetPlayerInput(Console.ReadLine());
+
+                    GameRound.Play(word, gameWord, playerInput);
+                    count++;
+
+            };
         }
 
     }
