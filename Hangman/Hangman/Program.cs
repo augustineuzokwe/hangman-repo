@@ -12,14 +12,12 @@ namespace Hangman
             char[] gameWord = scrambledWord.ToCharArray();
 
             GameRoundMessage.WelcomeToHangmanGame(scrambledWord);
-            int count = 0;
 
-            while (count < 3)
+            while (!GameRound.GameOver)
             {
-                    char playerInput = GameRound.GetPlayerInput(Console.ReadLine());
+                char playerInput = GameRound.GetPlayerInput(Console.ReadLine());
 
-                    GameRound.Play(word, gameWord, playerInput);
-                    count++;
+                GameRound.Play(word, gameWord, playerInput);
 
             };
         }
