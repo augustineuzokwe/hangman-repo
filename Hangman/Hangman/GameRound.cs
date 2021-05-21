@@ -1,62 +1,52 @@
-﻿            using System;
-            namespace Hangman
+﻿using System;
+namespace Hangman
+{
+    public static class GameRound
+    {
+
+        private static int wrongInputCount = 0;
+        private static int errorLimit = 3;
+        public static GameResult.Result gameResult;
+
+        public static bool GameOver { get; set; }
+
+        public static void Play(string word, char[] gameWord, char playerInput, out GameResult.Result gameResult, out string completedWord)
+        {
+            gameResult = GameResult.Result.somethingWentWrong;
+            completedWord = "";
+
+            if (CheckPlayerInput.IsCharacterInString(word, playerInput))
             {
-            public static class GameRound
-            {
-
-                private static int wrongInputCount = 0;
-                private static string completedWord = "";
-                private static int errorLimit = 3;
-
-                public static bool GameOver {get;set;}
-
-                    public static char GetPlayerInput(string input)
+                for (int y = 0; y < word.Length; y++)
+                {
+                    if (word[y] == playerInput)
                     {
-                        var x = input.ToCharArray();
+                        gameWord[y] = playerInput;
+                        completedWord = new string(gameWord);
 
-                        //need fixing
-                        if (char.IsLetter(x[0]))
-                            return x[0];
-
-                        return '-';
-                    }
-
-                    public static void Play(string word, char[] gameWord, char playerInput)
-                    {
-                        if (CheckPlayerInput.IsCharacterInString(word, playerInput))
-                        {
-
-                          for (int y = 0; y < word.Length; y++)
-                                {
-                                    if (word[y] == playerInput)
-                                    {
-                                        gameWord[y] = playerInput;
-                                        completedWord = new string(gameWord);
-
-                                        GameRoundMessage.RoundResult(GameResult.Results.correctInput, completedWord);
-
-                                    }
-                                }
-
-                                if (completedWord.Equals(word))
-                                {
-                                    GameRoundMessage.RoundResult(GameResult.Results.win);
-                            GameOver = true;
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                wrongInputCount++;
-                                GameRoundMessage.RoundResult(GameResult.Results.wrongInput, playerInput);
-
-                                if (wrongInputCount == errorLimit)
-                                {
-                                    GameRoundMessage.RoundResult(GameResult.Results.lost);
-                        GameOver = true;
-                        return;
-                                }
-                            }
+                        gameResult = GameResult.Result.correctInput;
                     }
                 }
+
+                if (completedWord.Equals(word))
+                {
+                    gameResult = GameResult.Result.win;
+                    GameOver = true;
+                    return;
+                }
             }
+            else
+            {
+                wrongInputCount++;
+                gameResult = GameResult.Result.wrongInput;
+
+                if (wrongInputCount == errorLimit)
+                {
+                    gameResult = GameResult.Result.lost;
+                    GameOver = true;
+                    return;
+                }
+            }
+        }
+    }
+}

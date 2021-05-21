@@ -11,13 +11,16 @@ namespace Hangman
             string scrambledWord = ScrambleWord.getScrambledWord(word);
             char[] gameWord = scrambledWord.ToCharArray();
 
+
             GameUI.WelcomeToHangmanGame(scrambledWord);
 
             while (!GameRound.GameOver)
             {
                 char playerInput = GameUI.GetPlayerInput();
 
-                GameRound.Play(word, gameWord, playerInput);
+                GameRound.Play(word, gameWord, playerInput, out GameResult.Result result, out string completedWord);
+
+                GameUI.GameRoundResult(result, completedWord, playerInput);
 
             };
         }
