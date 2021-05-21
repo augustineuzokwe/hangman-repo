@@ -9,9 +9,9 @@ namespace Hangman
         public static List<string> Words()
         {
             return new List<string> { "street", "storing", "shopping", "buying" };
-        } 
+        }
 
-        public static string getWord()
+        public static string GetWord()
         {
             Random randomNumber = new Random();
             var wordList = Words();

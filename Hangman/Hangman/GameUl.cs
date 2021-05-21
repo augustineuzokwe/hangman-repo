@@ -17,7 +17,7 @@ namespace Hangman
             Console.WriteLine("Enter a letter... \n");
         }
 
-        public static void GameRoundResult(GameResult.Result result, string completedWord = "", char playerInput=' ')
+        public static void GameRoundResult(GameResult.Result result, string completedWord = "", char playerInput = ' ')
         {
             switch (result)
             {

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Hangman
 {
-    public static class GameRound
+    public static class GameCore
     {
 
         private static int wrongInputCount = 0;
