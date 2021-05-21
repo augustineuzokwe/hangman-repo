@@ -8,7 +8,7 @@ namespace Hangman
     {
         public static List<string> Words()
         {
-            return new List<string> { "Street", "Storing", "Shopping", "Buying" };
+            return new List<string> { "street", "storing", "shopping", "buying" };
         } 
 
         public static string getWord()

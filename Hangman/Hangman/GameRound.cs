@@ -12,7 +12,7 @@ namespace Hangman
 
         public static void Play(string word, char[] gameWord, char playerInput, out GameResult.Result gameResult, out string completedWord)
         {
-            gameResult = GameResult.Result.somethingWentWrong;
+            gameResult = 0;
             completedWord = "";
 
             if (CheckPlayerInput.IsCharacterInString(word, playerInput))

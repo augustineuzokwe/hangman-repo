@@ -4,11 +4,13 @@ namespace Hangman
 {
     public class GameResult
     {
-        public enum Results{
+        public enum Result
+        {
             win,
             lost,
             correctInput,
-            wrongInput
+            wrongInput,
+            somethingWentWrong
         }
     }
 }

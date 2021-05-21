@@ -5,12 +5,7 @@ namespace Hangman
     {
         public static Boolean IsCharacterInString(string selectedWord, char playerInput)
         {
-            if (selectedWord.Contains(playerInput.ToString()))
-                {
-                    return true;
-                }
-            
-            return false;
+            return selectedWord.Contains(playerInput.ToString());
         }
     }
 }
