@@ -7,7 +7,7 @@ namespace Hangman
         public static void Main(string[] args)
         {
 
-            string word = RandomWord.getRandomWord();
+            string word = Data.getWord();
             string scrambledWord = ScrambleWord.getScrambledWord(word);
             char[] gameWord = scrambledWord.ToCharArray();
 
@@ -15,7 +15,7 @@ namespace Hangman
 
             while (!GameRound.GameOver)
             {
-                char playerInput = GameRound.GetPlayerInput(Console.ReadLine());
+                char playerInput = GameUl.getPlayerInput();
 
                 GameRound.Play(word, gameWord, playerInput);
 
