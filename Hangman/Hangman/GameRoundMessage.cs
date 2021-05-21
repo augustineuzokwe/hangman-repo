@@ -5,27 +5,29 @@ namespace Hangman
 {
     public static class GameRoundMessage
     {
-        public static void RoundResult(string results, string completedWord)
+
+
+        public static void RoundResult(GameResult.Results result, string completedWord)
         {
-            if (results == Results.correctInput.ToString())
+            if (result == GameResult.Results.correctInput)
                 Console.WriteLine("You entered correct letter: [ {0} ] ", completedWord);
         }
 
-        public static void RoundResult(string results)
+        public static void RoundResult(GameResult.Results result)
         {
-            if (results == Results.win.ToString())
+            if (result == Results.win)
             {
                 Console.Write("YOU'VE WON THE GAME");
             }
-            else if (results == Results.lost.ToString())
+            else if (result == Results.lost)
             {
                 Console.WriteLine("YOU LOST THE GAME");
             }
         }
 
-        public static void RoundResult(string results, char playerInput)
+        public static void RoundResult(GameResult.Results result, char playerInput)
         {
-            if (results == Results.wrongInput.ToString())
+            if (result == Results.wrongInput)
                 Console.WriteLine("you have entered a wrong letter: [ {0} ] you have Few more chance....", playerInput);
         }
 

@@ -33,14 +33,14 @@
                                         gameWord[y] = playerInput;
                                         completedWord = new string(gameWord);
 
-                                        GameRoundMessage.RoundResult(GameResult.Results.correctInput.ToString(), completedWord);
+                                        GameRoundMessage.RoundResult(GameResult.Results.correctInput, completedWord);
 
                                     }
                                 }
 
                                 if (completedWord.Equals(word))
                                 {
-                                    GameRoundMessage.RoundResult(GameResult.Results.win.ToString());
+                                    GameRoundMessage.RoundResult(GameResult.Results.win);
                             GameOver = true;
                                     return;
                                 }
@@ -48,11 +48,11 @@
                             else
                             {
                                 wrongInputCount++;
-                                GameRoundMessage.RoundResult(GameResult.Results.wrongInput.ToString(), playerInput);
+                                GameRoundMessage.RoundResult(GameResult.Results.wrongInput, playerInput);
 
                                 if (wrongInputCount == errorLimit)
                                 {
-                                    GameRoundMessage.RoundResult(GameResult.Results.lost.ToString());
+                                    GameRoundMessage.RoundResult(GameResult.Results.lost);
                         GameOver = true;
                         return;
                                 }
