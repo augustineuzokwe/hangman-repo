@@ -37,7 +37,6 @@
     <Compile Include="CheckPlayerInput.cs" />
     <Compile Include="GameRound.cs" />
     <Compile Include="Data.cs" />
-    <Compile Include="GameRoundMessage.cs" />
     <Compile Include="GameResult.cs" />
     <Compile Include="GameUl.cs" />
   </ItemGroup>
