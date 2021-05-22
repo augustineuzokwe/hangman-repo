@@ -22,18 +22,16 @@ namespace Hangman
             switch (result)
             {
                 case GameResult.Result.correctInput:
-                    Console.WriteLine("You entered correct letter: [ {0} ] ", playerInput);
-                    Console.WriteLine("Game completed word: [ {0} ] \n\nEnter a new letter: ", completedWord);
+                    Console.WriteLine($"You entered correct letter: [ {playerInput} ] - Game completed word: [ {completedWord} ] \n\nEnter a new letter: ");
                     break;
                 case GameResult.Result.win:
-                    Console.WriteLine("Game completed: [ {0} ]: \n\n ", completedWord);
-                    Console.Write("YOU'VE WON THE GAME");
+                    Console.WriteLine($"Game completed: [ {completedWord} ]: \n\n YOU'VE WON THE GAME");
                     break;
                 case GameResult.Result.lost:
-                    Console.WriteLine("YOU LOST THE GAME");
+                    Console.WriteLine($"You have entered a wrong letter: [ { playerInput } ] and used up your joker.\n\n YOU LOST THE GAME");
                     break;
                 case GameResult.Result.wrongInput:
-                    Console.WriteLine("you have entered a wrong letter: [ {0} ] you have Few more chance....", playerInput);
+                    Console.WriteLine($"You have entered a wrong letter: [ { playerInput } ] you have Few more chance....\n\nEnter a new letter: ");
                     break;
             }
         }
