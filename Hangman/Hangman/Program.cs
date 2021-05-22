@@ -8,7 +8,7 @@ namespace Hangman
         {
 
             string word = Data.GetWord();
-            string scrambledWord = ScrambleWord.getScrambledWord(word);
+            string scrambledWord = ScrambleWord.GetScrambledWord(word);
             char[] gameWord = scrambledWord.ToCharArray();
 
 
