@@ -10,9 +10,8 @@ namespace Hangman
 
         public static bool GameOver { get; set; }
 
-        public static GameResult.Result Play(string word, char[] gameWord, char playerInput, out string completedWord)
+        public static GameResult.Result Play(string word, char[] gameWord, char playerInput)
         {
-            completedWord = "";
 
             if (word.Contains(playerInput.ToString()))
             {
@@ -21,13 +20,13 @@ namespace Hangman
                     if (word[y] == playerInput)
                     {
                         gameWord[y] = playerInput;
-                        completedWord = new string(gameWord);
+                        GameResult.CompletedWord = new string(gameWord);
 
                         gameResult = GameResult.Result.correctInput;
                     }
                 }
 
-                if (completedWord.Equals(word))
+                if (GameResult.CompletedWord.Equals(word))
                 {
                     gameResult = GameResult.Result.win;
                     GameOver = true;
