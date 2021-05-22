@@ -4,14 +4,14 @@ namespace Hangman
     public class ScrambleWord
     {
 
-        private static Random randomNumberGenerator = new Random();
+        private static readonly Random RandomNumberGenerator = new Random();
 
-        public static string getScrambledWord(string selectedWord)
+        public static string GetScrambledWord(string selectedWord)
         {
             return selectedWord
-                    .Replace(selectedWord[randomNumberGenerator.Next(selectedWord.Length)], '_')
-                    .Replace(selectedWord[randomNumberGenerator.Next(selectedWord.Length)], '_')
-                    .Replace(selectedWord[randomNumberGenerator.Next(selectedWord.Length)], '_');
+                    .Replace(selectedWord[RandomNumberGenerator.Next(selectedWord.Length)], '_')
+                    .Replace(selectedWord[RandomNumberGenerator.Next(selectedWord.Length)], '_')
+                    .Replace(selectedWord[RandomNumberGenerator.Next(selectedWord.Length)], '_');
         }
     }
 }
