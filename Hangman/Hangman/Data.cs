@@ -6,7 +6,7 @@ namespace Hangman
 {
     public static class Data
     {
-        public static List<string> Words()
+        public static List<string> GetWords()
         {
             return new List<string> { "street", "storing", "shopping", "buying" };
         }
@@ -14,12 +14,10 @@ namespace Hangman
         public static string GetWord()
         {
             Random randomNumber = new Random();
-            var wordList = Words();
+            var wordList = GetWords();
             int number = randomNumber.Next(wordList.Count);
 
             return wordList[number];
         }
     }
-
-
 }
