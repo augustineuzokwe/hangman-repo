@@ -18,7 +18,7 @@ namespace Hangman
             {
                 char playerInput = GameUI.GetPlayerInput();
 
-                GameCore.Play(word, gameWord, playerInput, out GameResult.Result result, out string completedWord);
+                var result = GameCore.Play(word, gameWord, playerInput, out string completedWord);
 
                 GameUI.GameRoundResult(result, completedWord, playerInput);
 
