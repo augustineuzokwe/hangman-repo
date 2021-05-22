@@ -8,9 +8,8 @@ namespace Hangman
         {
             win,
             lost,
-            correctInput,
             wrongInput,
-            somethingWentWrong
+            correctInput
         }
     }
 }
