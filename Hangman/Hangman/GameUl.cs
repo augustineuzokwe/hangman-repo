@@ -5,7 +5,7 @@ namespace Hangman
     {
         public static char GetPlayerInput()
         {
-            return Char.Parse(Console.ReadLine());
+            return Console.ReadKey().KeyChar;
         }
 
         public static void WelcomeToHangmanGame(string scrambledWord)
@@ -22,16 +22,16 @@ namespace Hangman
             switch (result)
             {
                 case GameResult.Result.correctInput:
-                    Console.WriteLine($"You entered correct letter: [ {playerInput} ] - Game completed word: [ {completedWord} ] \n\nEnter a new letter: ");
+                    Console.WriteLine($"\nYou entered correct letter: [ {playerInput} ] - Game completed word: [ {completedWord} ] \n\nEnter a new letter: ");
                     break;
                 case GameResult.Result.win:
-                    Console.WriteLine($"Game completed: [ {completedWord} ]: \n\n YOU'VE WON THE GAME");
+                    Console.WriteLine($"\nGame completed: [ {completedWord} ]: \n\n YOU'VE WON THE GAME");
                     break;
                 case GameResult.Result.lost:
-                    Console.WriteLine($"You have entered a wrong letter: [ { playerInput } ] and used up your joker.\n\n YOU LOST THE GAME");
+                    Console.WriteLine($"\nYou have entered a wrong letter: [ { playerInput } ] and used up your joker.\n\n YOU LOST THE GAME");
                     break;
                 case GameResult.Result.wrongInput:
-                    Console.WriteLine($"You have entered a wrong letter: [ { playerInput } ] you have Few more chance....\n\nEnter a new letter: ");
+                    Console.WriteLine($"\nYou have entered a wrong letter: [ { playerInput } ] you have Few more chance....\n\n Enter a new letter: ");
                     break;
             }
         }
